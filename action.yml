@@ -1,0 +1,9 @@
+name: 'JSON Validator'
+description: 'Validate all existing json-files in project folder'
+inputs:
+  input_folder:  # id of input
+    description: 'folder with (subfolders and) json files'
+    required: true
+runs:
+  using: 'node16'
+  main: 'index.js'
