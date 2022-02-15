@@ -13,9 +13,12 @@ try {
     encoding: 'utf-8',
     flat: 'r'
   });
+  console.log(schema_file);
   const schema = ajv.compile(schema_file);
+  console.log(schema);
 
   const data = fs.readdirSync(folder);
+  console.log(data);
   data.map((dirname) => {
     const dir_files = fs.readdirSync(dirname);
     let target = '';
