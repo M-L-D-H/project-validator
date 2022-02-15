@@ -28,7 +28,7 @@ try {
         const valid = validate(JSON.parse(target));
 
         if (!valid) {
-          console.log(validate.errors);
+          console.log(`Error found in: "/PROJECTS/${dirname}/${file}"`);
           core.setFailed(validate.errors);
         } else {
           core.setOutput('Everything fine!');
