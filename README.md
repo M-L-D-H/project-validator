@@ -1,8 +1,8 @@
-[![Generic badge](https://img.shields.io/badge/IndexSchema-v0.1.0-blue.svg)](Version)
+[![Generic badge](https://img.shields.io/badge/Validator-Version-v0.1.0-blue.svg)](Version)
 
 # Project Validator
 
-This validation script is used to validate the project `.json`-files in each first-level subfolder of the workspace against the Schema.
+This validation script is used to validate the project `.json`-files in each first-level subfolder of the workspace against the Schema, using [https://ajv.js.org/json-schema.html#draft-2020-12](Ajv JSON schema validator).
 
 ## Usage
 
