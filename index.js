@@ -15,7 +15,7 @@ try {
     flat: 'r'
   });
   const schema_json = JSON.parse(schema_file);
-  const schema = ajv.compile(schema_json);
+  const validate = ajv.compile(schema_json);
 
   const data = fs.readdirSync(folder);
   console.log(data);
