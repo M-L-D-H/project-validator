@@ -15,7 +15,7 @@ try {
     flat: 'r'
   });
   console.log(schema_file);
-  const schema = ajv.compile(schema_file);
+  const schema = ajv.compileParser(schema_file);
   console.log(schema);
 
   const data = fs.readdirSync(folder);
@@ -26,7 +26,7 @@ try {
     dir_files.forEach((file) => {
       if (path.extname(file) === '.json') {
         target = fs.readFileSync(file);
-        const valid = validate(target);
+        const valid = validate(ajv.compileParser(target));
 
         if (!valid) {
           console.log(validate.errors);
