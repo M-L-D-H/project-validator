@@ -27,10 +27,11 @@ try {
         const valid = validate(JSON.parse(target));
 
         if (!valid) {
-          core.setFailed(`Error found in: "/PROJECTS/${dirname}/${file}"`);
+          let errmsg = `Error found in: "/PROJECTS/${dirname}/${file}"`;
           validate.errors.map((err) => {
-            console.error(err);
+            errmsg += `\n- ${err.instancePath} : "${err.message}"`
           });
+          core.setFailed(errmsg);
         } else {
           core.setOutput('Everything fine!');
         }
