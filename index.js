@@ -6,8 +6,9 @@ const path = require('path');
 
 try {
   const ajv = new Ajv();
-  const folder = core.getInput('input_folder') + '/PROJECTS';
-  const schema_path = core.getInput('schema') + '/SCHEMATA';
+  const workspace = core.getInput('workspace');
+  const folder = `${workspace}/PROJECTS`;
+  const schema_path = `${workspace}/SCHEMATA`;
 
   const schema_file = fs.readFileSync(`${schema_path}/project.schema.json`, {
     encoding: 'utf-8',
