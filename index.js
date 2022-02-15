@@ -18,7 +18,6 @@ try {
   const validate = ajv.compile(schema_json);
 
   const data = fs.readdirSync(folder);
-  console.log(data);
   data.map((dirname) => {
     const dir_files = fs.readdirSync(`${folder}/${dirname}`);
     let target = '';
@@ -28,8 +27,10 @@ try {
         const valid = validate(JSON.parse(target));
 
         if (!valid) {
-          console.log(`Error found in: "/PROJECTS/${dirname}/${file}"`);
-          core.setFailed(validate.errors);
+          core.setFailed(`Error found in: "/PROJECTS/${dirname}/${file}"`);
+          validate.errors.map((err) => {
+            console.error(err);
+          });
         } else {
           core.setOutput('Everything fine!');
         }
