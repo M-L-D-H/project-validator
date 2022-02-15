@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const Ajv = require('ajv/dist/2020');
+const Ajv2020 = require('ajv/dist/2020');
 const fs = require('fs');
 const path = require('path');
 
