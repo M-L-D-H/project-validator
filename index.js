@@ -20,11 +20,11 @@ try {
   const data = fs.readdirSync(folder);
   console.log(data);
   data.map((dirname) => {
-    const dir_files = fs.readdirSync(dirname);
+    const dir_files = fs.readdirSync(`${folder}/${dirname}`);
     let target = '';
     dir_files.forEach((file) => {
       if (path.extname(file) === '.json') {
-        target = fs.readFileSync(file);
+        target = fs.readFileSync(`${folder}/${dirname}/${file}`);
         const valid = validate(JSON.parse(target));
 
         if (!valid) {
