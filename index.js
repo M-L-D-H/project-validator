@@ -1,11 +1,11 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const Ajv = require('ajv');
+const Ajv = require('ajv/dist/2020');
 const fs = require('fs');
 const path = require('path');
 
 try {
-  const ajv = new Ajv();
+  const ajv = new Ajv2020();
   const workspace = core.getInput('workspace');
   const folder = `${workspace}/PROJECTS`;
   const schema_path = `${workspace}/SCHEMATA`;
