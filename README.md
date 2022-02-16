@@ -1,4 +1,4 @@
-[![Generic badge](https://img.shields.io/badge/Validator-Version-v0.1.0-blue.svg)](Version)
+[![Generic badge](https://img.shields.io/badge/Validator-v0.1.1-blue.svg)]()
 
 # Project Validator
 
